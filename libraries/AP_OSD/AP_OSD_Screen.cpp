@@ -1277,7 +1277,7 @@ void AP_OSD_Screen::draw_blh_rpm(uint8_t x, uint8_t y)
         if (!blheli->get_telem_data(0, td)) {
             return;
         }
-        backend->write(x, y, false, "%5d%c", td.rpm, SYM_RPM);
+        backend->write(x, y, false, "%3.1f%c", td.rpm * 0.001f, SYM_RPM);
     }
 }
 
